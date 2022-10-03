@@ -12,8 +12,8 @@ Solution: The plugin will render the backtext of the flashcard directly under th
 What you need to do?: You simply need to install the plugin and activate it.
 
 ### Picture 1: Before plugin activation
-![img.png](public/beforePluginActivation.png)
+![img.png](https://raw.githubusercontent.com/micharied/flashcard-from-headline-to-body/main/images/beforePluginActivation.png)
 
 ### Picture 2: After plugin activation
-![img.png](public/afterPluginActivation.png)
+![img.png](https://raw.githubusercontent.com/micharied/flashcard-from-headline-to-body/main/images/afterPluginActivation.png)
 

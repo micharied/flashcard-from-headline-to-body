@@ -1,7 +1,7 @@
 import {
     AppEvents, Rem,
     RemId,
-    renderWidget,
+    renderWidget, SelectionType,
     useAPIEventListener,
     usePlugin,
     useSyncedStorageState, useTracker, WidgetLocation
@@ -9,14 +9,13 @@ import {
 
 function FlashcardFromHeadlineToBody() {
     const rem = useTracker(async (rp) => {
-        const widgetContext = await rp.widget.getWidgetContext<WidgetLocation.DocumentBelowTitle>();
-        return await rp.rem.findOne(widgetContext?.documentId)
+        return await rp.focus.getFocusedPortal()
     })
 
-    if (rem?.backText && rem.backText.length === 0) {
-        return null;
+    if (rem != undefined && rem.backText && rem.backText.length > 0) {
+        return <div><b>Definition:</b> <i>{rem?.backText}</i></div>;
     }
-    return <div><b>Definition:</b> <i>{rem?.backText}</i></div>;
+    return null;
 }
 
 renderWidget(FlashcardFromHeadlineToBody);
